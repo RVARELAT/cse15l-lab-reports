@@ -100,7 +100,7 @@ if (url.getPath().contains("/add")) {
 
 ## /search
 ![third image](search.png)
-- In this example, when we use our /search path, we expect to search our list for the strings with the given substring. In our screenshot, the substring is "app" and therefore, we search through our list and expect a new list with our strings "pineapple, apple" to be returned as those words conatiain the "app" substring.
+- In this example, when we use our /search path, we expect to search our list for the strings with the given substring. In our screenshot, the substring is "app" and therefore, we search through our list and expect a new list with our strings "pineapple, apple" to be returned as those words contain the "app" substring.
 - In our code below, we create a new arraylist as that is where we want our Strings to be added with the given substring. We use a for loop to iterate through our list with our strings, and add this string to our new list if it contains "parameters[1]" which stands for the substring in this case. We return this new list once our for loop finishes. 
 ``` 
 if (url.getPath().contains("/search")) {
@@ -147,19 +147,20 @@ for(int i = 0; i < arr.length; i += 1) {
 ```
 
 ## Connection of symptom and bug 
-- The bug causes to list [3, 5, 7] to be reversed in place as this part in the code:
+- The bug causes the list [3, 5, 7] to not be reversed in place because of this part in the code:
 ``` 
 arr[i] = arr[arr.length -i -1]
 ```
-- It was making the number 3 copy itself to the beginning and end of the list and not reversing anything. Therefore, our symptom would be the list [3, 5, 3] which is what us shown in our terminal. 
+- It was making the number 3 copy itself to the beginning and end of the list and not reversing anything. Therefore, our symptom would be the list [3, 5, 3] which is what us shown in our terminal when it expects 7 instead of 3. 
 
 
 # Linked List Method append (LinkedListExample.java)
 
 ## Failure inducing input
 - We are running into an infinite loop error as it seems that our test is not even showing us what the error is as it is constantly loading. I am using a test with two numbers and appending a number to make sure my first number is not being changed.
-```
 
+
+```
 import static org.junit.Assert.*;
 import org.junit.*;
 
@@ -174,11 +175,11 @@ public class LinkedListTests {
 
 	}
 }
-
 ```
 
+
 ## The Symptom
-- The error seems to be "java heap space" which we can interpret this is being cause by an infinite loop in a Linked list Method.
+- The error seems to be "java heap space" which we can interpret this is being caused by an infinite loop in a Linked list Method.
 ![eigth image](S.png)
 
 ## The Bug
@@ -206,11 +207,13 @@ public class LinkedListTests {
             n.next = new Node(value, null);
         }
     }
-    
+
 ```
 
 ## Connection of symptom and bug
-- The bug causes our symptom for my input of a linkedList with the values of "15, 14, 17" as when I called the append method, this causes the infinite loop. Therefore, our symptom is what our terminal told us which is "java heap space". Therefore, for this append method the input would not really matter as the bug is with the method and not the input that it's given. 
+- The bug is in the append method for my input of a linkedList with the values of "15, 14, 17" as this causes the infinite loop. Our symptom is what our terminal told us which is "java heap space". Therefore, for this append method the input would not really matter as the bug is within the method and the input that is given is not really "tested".
+
+
 ``` 
 //Otherwise, loop until the end and add at the end with a null
     while(n.next != null) {
