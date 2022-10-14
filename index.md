@@ -6,6 +6,8 @@ Hello, World!
 > See you later!
 
 
-[Lab Week 0](lab-report-1-week-0.md)
+[Week 0 Lab](lab-report-1-week-0.md)
 
-[Lab Report 1](lab-report-1.md)
+[Week 1 Lab Report](lab-report-1.md)
+
+[Week 3 Lab Report](lab-report-2.md)

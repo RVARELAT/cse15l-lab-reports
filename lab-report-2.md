@@ -116,3 +116,98 @@ if (url.getPath().contains("/search")) {
 
 
 # Part 2
+# reverseInPlace (ArrayExamples.java)
+
+## Failure Inducing input
+- The reverseInPlace Method is not reversing the list but instead it is "Mirroring" itself. That is why the first number is still 3 after calling the method on the "input 1" list.
+```
+@Test 
+	public void testReverseInPlace2() {
+    int[] input1 = { 3, 5, 7 };
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{ 7, 5, 3 }, input1);
+	}
+```
+
+## The Symptom
+- Our output in our terminal shows us that "expected<3> but was <7>" as we expect this error to happen because of the "mirroring" effect.
+![fifth image](symptom.png)
+
+## The Bug
+- The method before was just mirroring the list instead of reversing the order. 
+Changes: (I created a temp array to avoid the mirroring effect)
+```
+for(int i = 0; i < arr.length; i += 1) {
+    arr[i] = temp[arr.length -i -1];
+}
+```
+
+## Connection of symptom and bug 
+- The bug causes to list [3, 5, 7] to be reversed in place as this part in the code:
+``` 
+arr[i] = arr[arr.length -i -1]
+```
+- It was making the number 3 copy itself to the beginning and end of the list and not reversing anything. Therefore, our symptom would be the list [3, 5, 3] which is what us shown in our terminal. 
+
+
+# Linked List Method append (LinkedListExample.java)
+
+## Failure inducing input
+- We are running into an infinite loop error as it seems that our test is not even showing us what the error is as it is constantly loading. I am using a test with two numbers and appending a number to make sure my first number is not being changed.
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class LinkedListTests {
+    @Test 
+	public void test() {
+        LinkedList testList = new LinkedList();
+        testList.prepend(14);
+        testList.prepend(15);
+        testList.append(17);
+        assertEquals("list should be 15, 14, 17", 15, testList.first());
+
+	}
+}
+```
+
+## The Symptom
+- The error seems to be "java heap space" which we can interpret this is being cause by an infinite loop in a Linked list Method.
+![eigth image](S.png)
+
+## The Bug
+- The bug seems to be found in our append method. When we enter our while loop we want to make sure we are moving on to the next node. Therefore, our while loop is currently running on the same node which is causing the infinite loop error. (I moved the line of code that is suppose to move to the next node outside the while loop to make sure we don't constantly run the while loop on the same node)
+```
+/**
+     * Adds the value to the _end_ of the list
+     * @param value
+     */
+    public void append(int value) {
+        if(this.root == null) {
+            this.root = new Node(value, null);
+            return;
+        }
+        // If it's just one element, add if after that one
+        Node n = this.root;
+        if(n.next == null) {
+            n.next = new Node(value, null);
+            return;
+        }
+        // Otherwise, loop until the end and add at the end with a null
+        while(n.next != null) {
+            n = n.next;
+            n.next = new Node(value, null);
+        }
+    }
+```
+
+## Connection of symptom and bug
+- The bug causes our symptom for my input of a linkedList with the values of "15, 14, 17" as when I called the append method, this causes the infinite loop. Therefore, our symptom is what our terminal told us which is "java heap space". Therefore, for this append method the input would not really matter as the bug is with the method and not the input that it's given. 
+``` 
+//Otherwise, loop until the end and add at the end with a null
+    while(n.next != null) {
+        n = n.next;
+        //n.next = new Node(value, null);
+    }
+    n.next = new Node(value, null);
+```
