@@ -1,7 +1,10 @@
 # Part 1 (Simplest Search Engine)
 
 # Full Code
-``` import java.io.IOException;
+
+``` 
+
+import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 
@@ -52,6 +55,7 @@ class SearchEngine{
         Server.start(port, new Handler());
     }
 } 
+
 ```
 
 
@@ -155,6 +159,7 @@ arr[i] = arr[arr.length -i -1]
 ## Failure inducing input
 - We are running into an infinite loop error as it seems that our test is not even showing us what the error is as it is constantly loading. I am using a test with two numbers and appending a number to make sure my first number is not being changed.
 ```
+
 import static org.junit.Assert.*;
 import org.junit.*;
 
@@ -169,6 +174,7 @@ public class LinkedListTests {
 
 	}
 }
+
 ```
 
 ## The Symptom
@@ -177,6 +183,7 @@ public class LinkedListTests {
 
 ## The Bug
 - The bug seems to be found in our append method. When we enter our while loop we want to make sure we are moving on to the next node. Therefore, our while loop is currently running on the same node which is causing the infinite loop error. (I moved the line of code that is suppose to move to the next node outside the while loop to make sure we don't constantly run the while loop on the same node)
+
 ```
 /**
      * Adds the value to the _end_ of the list
@@ -199,6 +206,7 @@ public class LinkedListTests {
             n.next = new Node(value, null);
         }
     }
+    
 ```
 
 ## Connection of symptom and bug
