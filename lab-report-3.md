@@ -368,4 +368,4 @@ government/Gen_Account_Office
 government/Post_Rate_Comm
 government/Media
 ```
--The -type command followed by "d" shows us all the directories under the government subdirectory. This is useful if we want to know if a subdirectory contains more directories, in this case "government" does contain more directories, if it didn't, we would know this specific directory may only contain regular files.
+- The -type command followed by "d" shows us all the directories under the government subdirectory. This is useful if we want to know if a subdirectory contains more directories, in this case "government" does contain more directories, if it didn't, we would know this specific directory may only contain regular files.
