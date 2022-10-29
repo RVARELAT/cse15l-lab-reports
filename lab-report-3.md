@@ -1,28 +1,5 @@
 # Week 5 Lab Report (Find Commands)
 
-## -name
-
-```
-find technical -name "chapter-1.txt"
-technical/911report/chapter-1.txt
-```
-- the -name command is looking for files from ./technical that is named "chapter-1.txt" which is useful when we want to find a specific file.
-
-```
-find technical -name Media  
-technical/government/Media
-```
-- the -name command is helping us look for a directory that is named Media and in this case, the Media directory is a subdirectory to the "government" directory. This is useful if we dont want to go searching through all directories to find a certain subdirectory.
-
-```
-find technical -name "*PDF.txt"
-technical/government/Alcohol_Problems/Session2-PDF.txt
-technical/government/Alcohol_Problems/Session3-PDF.txt
-technical/government/Alcohol_Problems/DraftRecom-PDF.txt
-technical/government/Alcohol_Problems/Session4-PDF.txt
-```
-- the -name command is looking for files that end with "PDF.txt". This is useful if we are looking for files that contaian "PDF.txt" in its name and "*" helps with this as we don't care what the file is named as long as it ends with "PDF.txt".
-
 ## -mtime
 
 ```
@@ -64,7 +41,7 @@ technical/biomed
 technical/911report
 ```
 
-- The -type command followed by "d" which stands for directory is listing all the directories, including sudirectories, from ./technical. This is useful if we want to know what directories are we are working with, in this case what directories and subdirectories are from t./technical.
+- The -type command followed by "d" which stands for directory is listing all the directories, including sudirectories, from ./technical. This is useful if we want to know what directories are we are working with, in this case what directories and subdirectories are from ./technical.
 
 ```
 cd technical
@@ -369,3 +346,31 @@ government/Post_Rate_Comm
 government/Media
 ```
 - The -type command followed by "d" shows us all the directories under the government subdirectory. This is useful if we want to know if a subdirectory contains more directories, in this case "government" does contain more directories, if it didn't, we would know this specific directory may only contain regular files.
+
+## -size
+```
+find technical -size +500
+technical/government/Gen_Account_Office/Statements_Feb28-1997_volume.txt
+technical/government/Gen_Account_Office/d01591sp.txt
+technical/911report/chapter-13.4.txt
+technical/911report/chapter-13.5.txt
+technical/911report/chapter-3.txt
+```
+- The -size command finds files from technical that use more than 500, 512-byte blocks units of space. This is useful if we want to find files with a certain size.
+
+```
+cd technical
+find 911report -size -75k 
+911report
+911report/preface.txt
+911report/chapter-10.txt
+911report/chapter-11.txt
+```
+- The -size command in this case is being used on a specific directory (911report) to find files that use less than 75 kilobytes("k"). This is useful if we want to find smaller files in a certain directory. (we can change number or scale indicator)
+
+```
+cd technical
+find plos  -size +500c -size -900c
+plos/pmed.0020191.txt
+```
+- The -size command is finding files in bytes (“c”) between a range of 500 to 900 in the directory "plos". This can be very useful if we want to find a file that is between a certain range of size in a certain directory. 
