@@ -7,14 +7,14 @@ find technical -mtime -7
 technical/plos/journal.pbio.0020001.txt
 technical/biomed/1468-6708-3-1.txt
 ```
-- The -mtime command finds files that we modified in the last 7 days which is what "-7" is for. This is useful to find files we modfied but can't remember which ones they were.
+- The -mtime command finds files that we modified in the last 7 days which is what "-7" is for. This is useful to find files we modfied in the last week but can't remember which ones they were.
 
 ```
 cd technical
-find plos -mtime -7
+find plos -mtime -1
 plos/journal.pbio.0020001.txt
 ```
-- When we cd into our technical directory we use the -mtime command to find files we modified in the last 7 days in the plos directory. This is useful when we only want to find files we modified in a certain directory.
+- When we cd into our technical directory we use the -mtime command to find files we modified in the last day in the plos directory. This is useful when we only want to find files we modified in a certain directory recently.
 
 ```
 find technical -mtime 0  -mtime -7
@@ -356,7 +356,7 @@ technical/911report/chapter-13.4.txt
 technical/911report/chapter-13.5.txt
 technical/911report/chapter-3.txt
 ```
-- The -size command finds files from technical that use more than 500, 512-byte blocks units of space. This is useful if we want to find files with a certain size.
+- The -size command finds files from technical that use more than 500, 512-byte blocks units of space. This is useful if we want to find files that are larger than a certain size.
 
 ```
 cd technical
@@ -366,7 +366,7 @@ find 911report -size -75k
 911report/chapter-10.txt
 911report/chapter-11.txt
 ```
-- The -size command in this case is being used on a specific directory (911report) to find files that use less than 75 kilobytes("k"). This is useful if we want to find smaller files in a certain directory. (we can change number or scale indicator)
+- The -size command in this case is being used on a specific directory (911report) to find files that use less than 75 kilobytes("k"). This is useful if we want to find smaller files in a certain directory. (we can change number or scale indicator for -size command)
 
 ```
 cd technical
