@@ -72,5 +72,6 @@ args[1]<esc>
 
 ## First Question:
 - I would choose the second style if I had to work on a program that I was running remotely as it is more efficient since I am making the changes already in SSH. Therefore, I don't need to remember to do SCP when making the changes locally. The second style simply requires me to use VIM remotely to make the changes and from that same SSH session, I can run the tests on the changes I made.
-## Second Question
+
+## Second Question:
 - The only way a project or task may factor into my decision is if I don't have to copy my changes to the remote server. In that case, I don't see a reason to work on the remote server. Besides that, I feel like using VIM to make changes directly on the remote server is more efficient for me since I can easily run tests and make changes without worrying to do SCP.
