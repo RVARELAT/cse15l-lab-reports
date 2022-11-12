@@ -12,17 +12,22 @@
 /cal<enter>n
 ```
 - We search for the occurences of the query "cal" in our code and press enter, we will notice that we are not in the place we want to be when we first press enter, therefore, we press "n" to move on to the next occurence of the query "cal" which is where we want to be.
+
 ```
 /cal
 ```
 ![first image](cal.png)
+
 ```
 <enter>
 ```
+
 ![second image](enter.png)
+
 ```
 n
 ```
+
 ![third image](newn.png)
 
 ```
