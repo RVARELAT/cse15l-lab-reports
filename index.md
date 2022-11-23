@@ -15,3 +15,5 @@ Hello, World!
 [week 5 lab report](lab-report-3.md)
 
 [week 7 lab report](lab-report-4.md)
+
+[week 9 lab report](lab-report-5.md)
