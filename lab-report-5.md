@@ -63,3 +63,38 @@ fi
 
 ## Trace of grade.sh on the student submission which has a great implementation saved in a file with the wrong name.
 
+ - When I run this in the terminal:
+ ```
+ bash grade.sh https://github.com/ucsd-cse15l-f22/list-methods-filename
+ ```
+ - The first thing that happens is a variable is created with the name CPATH that stores the library needed to run Junit
+ ```
+ CPATH=".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"
+ ```
+ - Then the line below clears the student-submission
+ ```
+ rm -rf student-submission
+```
+- After this i create a new directory for my student submission and use git clone to save this student-submission in this directory. "$1" uses our first parameter which is the link to clone this repostory.
+```
+mkdir student-submission
+git clone $1 student-submission
+```
+- Next we want to make sure we cp and cd into the correct directory we want to work with. 
+```
+cp TestListExamples.java student-submission
+cd student-submission
+```
+
+- Now this is where our student-submission comes into play, since this student-submission does not contain the right file, our if statement will be false because the file "ListExamples.java" is not found as this student named their file incorrectly. Therefore, the else statement is executed which echo's our message and exit 0 terminates the program as we now know that the student gets a grade 0 for submitting the wrong file name.
+```
+if [[ -f "ListExamples.java" ]]
+    then 
+        echo "File Found: +1 point"
+    else
+        echo "Wrong file submitted: Grade 0 (Submit right file or check file name)"
+        exit 0
+fi 
+```
+
+##
