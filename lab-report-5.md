@@ -60,3 +60,6 @@ fi
 ## Screenshot for the output which has a great implementation saved in a file with the wrong name.
 ![third image](ex5.png)
 - This student submission recieves no credit but I do make sure to leave a message saying to make sure they submit the right file/file name.
+
+## Trace of grade.sh on the student submission which has a great implementation saved in a file with the wrong name.
+
