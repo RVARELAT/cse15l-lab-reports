@@ -71,7 +71,7 @@ fi
  ```
  CPATH=".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"
  ```
- - Then the line below clears the student-submission
+ - Then the line below clears the student-submission. This makes sure we have the new student-submission everytime we run bash.
  ```
  rm -rf student-submission
 ```
