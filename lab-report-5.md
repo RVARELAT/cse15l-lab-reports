@@ -97,4 +97,34 @@ if [[ -f "ListExamples.java" ]]
 fi 
 ```
 
-##
+## Standard error and output, return code
+
+## rm
+- standard output: (empty)
+- standard error: (empty)
+- return code: 0
+
+## mkdir 
+- standard output: (empty)
+- standard error: (empty)
+- return code: 0
+
+## git 
+- standard output: (empty)
+- standard error: Cloning into 'student-submission'...
+- return code: 0
+
+## cp 
+- standard output: empty
+- standard error: empty
+- return code: 0
+
+## cd
+- standard output: empty
+- standard error: empty
+- return code: 0
+
+## echo
+- standard output: Wrong file submitted: Grade 0 (Submit right file or check file name)
+- standard error: empty
+- return code: 0
