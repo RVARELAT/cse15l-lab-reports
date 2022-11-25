@@ -117,16 +117,16 @@ fi
 - return code: 0
 
 ## cp 
-- standard output: empty
-- standard error: empty
+- standard output: (empty)
+- standard error: (empty)
 - return code: 0
 
 ## cd
-- standard output: empty
-- standard error: empty
+- standard output: (empty)
+- standard error: (empty)
 - return code: 0
 
 ## echo
 - standard output: Wrong file submitted: Grade 0 (Submit right file or check file name)
-- standard error: empty
+- standard error: (empty)
 - return code: 0
