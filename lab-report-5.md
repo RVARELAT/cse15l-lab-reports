@@ -67,7 +67,7 @@ fi
  ```
  bash grade.sh https://github.com/ucsd-cse15l-f22/list-methods-filename
  ```
- - The first thing that happens is a variable is created with the name CPATH that stores the library needed to run Junit
+ - The first thing that happens is a variable is created with the name CPATH that stores the library needed to run Junit.
  ```
  CPATH=".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"
  ```
@@ -75,7 +75,7 @@ fi
  ```
  rm -rf student-submission
 ```
-- After this i create a new directory for my student submission and use git clone to save this student-submission in this directory. "$1" uses our first parameter which is the link to clone this repostory.
+- After this I create a new directory for student-submission and use git clone to save this student-submission in this directory. "$1" uses our first parameter which is the link to clone the student-submission repository.
 ```
 mkdir student-submission
 git clone $1 student-submission
