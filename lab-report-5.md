@@ -89,6 +89,7 @@ Then the line below clears the student-submission. This makes sure we have the n
 - standard output: (empty)
 - standard error: (empty)
 - return code: 0
+
 ## git 
 - standard output: (empty)
 - standard error: Cloning into 'student-submission'...
