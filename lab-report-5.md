@@ -73,48 +73,32 @@ fi
  ```
  CPATH=".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"
  ```
- - Then the line below clears the student-submission. This makes sure we have the new student-submission everytime we run bash.
- ```
- rm -rf student-submission
-```
-- After this I create a new directory for student-submission and use git clone to save this student-submission in this directory. "$1" uses our first parameter which is the link to clone the student-submission repository.
-```
-mkdir student-submission
-git clone $1 student-submission
-```
-- Next we want to make sure we cp and cd into the correct directory we want to work with. 
-```
-cp TestListExamples.java student-submission
-cd student-submission
-```
-
-- Now this is where our student-submission comes into play, since this student-submission does not contain the right file, our if statement will be false because the file "ListExamples.java" is not found as this student named their file incorrectly. Therefore, the else statement is executed which echo's our message and exit 0 terminates the program as we now know that the student gets a grade 0 for submitting the wrong file name.
-```
-if [[ -f "ListExamples.java" ]]
-    then 
-        echo "File Found: +1 point"
-    else
-        echo "Wrong file submitted: Grade 0 (Submit right file or check file name)"
-        exit 0
-fi 
-```
-
-## Standard error and output, return code
-
-## rm
+ 
+  ## rm
 - standard output: (empty)
 - standard error: (empty)
 - return code: 0
+
+Then the line below clears the student-submission. This makes sure we have the new student-submission everytime we run bash. We are essentially clearing the saved student-submission. 
+ ```
+ rm -rf student-submission
+```
+
 
 ## mkdir 
 - standard output: (empty)
 - standard error: (empty)
 - return code: 0
-
 ## git 
 - standard output: (empty)
 - standard error: Cloning into 'student-submission'...
 - return code: 0
+
+After this I create a new directory for student-submission and use git clone to save this student-submission in this directory. "$1" uses our first parameter which is the link to clone the student-submission repository.
+```
+mkdir student-submission
+git clone $1 student-submission
+```
 
 ## cp 
 - standard output: (empty)
@@ -126,7 +110,23 @@ fi
 - standard error: (empty)
 - return code: 0
 
+Next we want to make sure we cp the file TestListExamples.java into our student-submission in order to work with it and we want to cd into the correct file we want to work with.
+```
+cp TestListExamples.java student-submission
+cd student-submission
+```
 ## echo
 - standard output: Wrong file submitted: Grade 0 (Submit right file or check file name)
 - standard error: (empty)
 - return code: 0
+
+Now this is where our student-submission comes into play, since this student-submission does not contain the right file, our if statement will be false because the file "ListExamples.java" is not found as this student named their file incorrectly. Therefore, the else statement is executed which echo's our message and exit 0 terminates the program as we now know that the student gets a grade 0 for submitting the wrong file name.
+```
+if [[ -f "ListExamples.java" ]]
+    then 
+        echo "File Found: +1 point"
+    else
+        echo "Wrong file submitted: Grade 0 (Submit right file or check file name)"
+        exit 0
+fi 
+```
