@@ -51,19 +51,19 @@ if [[ $? -eq 0 ]]
 fi
 ```
 
-## Screenshot for the output of which has the methods correct
+## Screenshot for the output of which has the methods correct:
 ![first image](ex2.png)
 - This student submission recieves full credit :).
 
-## Screenshot for the output which has which has a syntax error of a missing semicolon
+## Screenshot for the output which has which has a syntax error of a missing semicolon:
 ![second image](ex3.png)
 - This student submission gets credit for submitting the right file but since they failed the compilation, I only give them one point :(.
 
-## Screenshot for the output which has a great implementation saved in a file with the wrong name.
+## Screenshot for the output which has a great implementation saved in a file with the wrong name:
 ![third image](ex5.png)
 - This student submission recieves no credit but I do make sure to leave a message saying to make sure they submit the right file/file name.
 
-## Trace of grade.sh on the student submission which has a great implementation saved in a file with the wrong name.
+## Trace of grade.sh on the student submission which has a great implementation saved in a file with the wrong name:
 
  - When I run this in the terminal:
  ```
