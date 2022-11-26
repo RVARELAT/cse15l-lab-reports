@@ -74,7 +74,7 @@ fi
  CPATH=".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"
  ```
  
-  ## rm
+## rm
 - standard output: (empty)
 - standard error: (empty)
 - return code: 0
